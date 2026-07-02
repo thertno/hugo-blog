@@ -1,13 +1,14 @@
 ---
-title: "AI Agent 记忆系统实战：从零搭建你的 Agent 知识库"
-date: 2026-03-19T00:25:00+08:00
+title: AI Agent 记忆系统实战：从零搭建你的 Agent 知识库
+date: 2025-10-18T00:25:00+08:00
 draft: false
 tags:
   - AI Agent
   - 记忆系统
   - LLM
   - 知识管理
-summary: "每个 LLM Agent 都有致命弱点：上下文窗口 ≠ 记忆。本文详解如何为 AI Agent 搭建 NOW.md + 日志 + 知识库 + 归档的四层记忆系统，附 YAML 温度衰减模型和防幻觉规范。"
+summary: 每个 LLM Agent 都有致命弱点：上下文窗口 ≠ 记忆。本文详解如何为 AI Agent 搭建 NOW.md + 日志 + 知识库 +
+  归档的四层记忆系统，附 YAML 温度衰减模型和防幻觉规范。
 ---
 
 每个 LLM Agent 都有一个致命弱点：**上下文窗口 ≠ 记忆**。
