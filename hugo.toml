@@ -1,0 +1,101 @@
+baseURL = "/"
+languageCode = "zh-CN"
+relativeURLs = true
+canonifyURLs = false
+title = "Lero的博客"
+theme = "LoveIt"
+
+[author]
+  name = "lero"
+  link = ""
+
+[params]
+  description = "记录技术、生活和思考"
+  defaultTheme = "auto"
+  dateFormat = "2006-01-02"
+
+  [params.search]
+    enable = true
+    type = "fuse"
+    contentLength = 4000
+    placeholder = "搜索文章、标签..."
+    maxResultLength = 10
+    snippetLength = 50
+    highlightTag = "em"
+    absoluteURL = false
+
+  [params.search.fuse]
+    isCaseSensitive = false
+    minMatchCharLength = 2
+    findAllMatches = false
+    location = 0
+    threshold = 0.3
+    distance = 100
+    ignoreLocation = false
+
+  [params.author]
+    name = "lero"
+    link = "https://github.com/thertno"
+
+  [params.header]
+    [params.header.title]
+      name = "Lero的博客"
+
+  [params.app]
+    title = "Lero的博客"
+
+  [params.home]
+    [params.home.profile]
+      enable = true
+      avatarURL = "/images/avatar-v2.png"
+      title = "Lero的博客"
+      subtitle = "记录技术、生活和思考"
+      typeit = false
+      social = true
+
+    [params.home.posts]
+      enable = true
+      paginate = 10
+
+  [params.page]
+    [params.page.toc]
+      enable = true
+      auto = true
+    [params.page.code]
+      copy = true
+      maxShownLines = 50
+
+  [params.footer]
+    enable = true
+    custom = "© 2025 Lero的笔记本"
+    hugo = false
+    copyright = false
+    author = false
+    since = 2025
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

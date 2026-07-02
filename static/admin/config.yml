@@ -1,0 +1,74 @@
+backend:
+  name: proxy
+  proxy_url: http://192.168.31.164:8082/api/v1
+
+local_backend:
+  url: http://192.168.31.164:8082/api/v1
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+publish_mode: simple
+site_url: "http://192.168.31.164:8555"
+display_url: "http://192.168.31.164:8555"
+locale: "zh_Hans"
+
+collections:
+  - name: "posts"
+    label: "文章"
+    label_singular: "文章"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    preview_path: "posts/{{slug}}/"
+    fields:
+      - label: "标题"
+        name: "title"
+        widget: "string"
+      - label: "发布时间"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+      - label: "草稿"
+        name: "draft"
+        widget: "boolean"
+        default: false
+      - label: "标签"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+        summary: "{{fields.tag}}"
+        field:
+          label: "标签"
+          name: "tag"
+          widget: "string"
+      - label: "摘要"
+        name: "summary"
+        widget: "text"
+        required: false
+      - label: "正文"
+        name: "body"
+        widget: "markdown"
+
+  - name: "pages"
+    label: "页面"
+    label_singular: "页面"
+    files:
+      - label: "站点配置"
+        name: "config"
+        file: "hugo.toml"
+        format: "toml"
+        fields:
+          - label: "站点标题"
+            name: "title"
+            widget: "string"
+          - label: "语言"
+            name: "languageCode"
+            widget: "string"
+          - label: "主题"
+            name: "theme"
+            widget: "string"
