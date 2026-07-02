@@ -1,6 +1,6 @@
 backend:
-  name: proxy
-  proxy_url: http://192.168.31.164:8082/api/v1
+  name: git-gateway
+  branch: main
 
 local_backend:
   url: http://192.168.31.164:8082/api/v1
